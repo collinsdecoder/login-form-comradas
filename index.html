@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
 
+    <style>
+        form{
+            justify-content: center;
+            align-items: center;
+            ;
+            background-color: #f1f1f1;
+            max-width: 50%;
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .btn{
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        body {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <form action="menu.html">
+        <div class="text">
+            <h1>Welcome!!</h1>
+            <p>Please, feel free to provide the required information thank you!</p>
+            <label for="username">username</label>
+            <input type="text" name="username" id="username" placeholder="username" required>
+
+            <input type="email" name="email" id="email" placeholder="@example.com" required>
+
+            <label for="password">password</label>
+            <input type="password" name="password" id="password"
+            minlength="6" placeholder="password" required>
+            <label for="confirm-password">Confirm password</label>
+            <input type="password" name="confirm-password" id="confirm-password" 
+            minlength="6" placeholder="confirm password" required>
+
+            <input type="submit" class="btn" value="submit">
+
+        </div>
+    </form>
+    
+        
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            // Prevent form submission
+            event.preventDefault();
+
+            // Get password values
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            // Validate passwords
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            // If validation passes, submit the form
+            this.submit();
+        });
+    
+// ... existing code ...
+    </script>
+    
+    
+</body>
+</html>
